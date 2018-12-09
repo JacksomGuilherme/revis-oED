@@ -40,7 +40,7 @@ public class Fila {
 	}
 	
 	
-	public void show(int elemento){
+	public void show(){
 		
 		Node aux = inicio;
 		if(isEmpty()){

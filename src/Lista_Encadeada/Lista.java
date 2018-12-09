@@ -94,7 +94,7 @@ public class Lista {
 		System.out.println("A lista é: ");
 		Node current = head;
 		while(current != null){
-			System.out.println(current.getElement() + " ");
+			System.out.print(current.getElement() + "x");
 			current = current.getNext();
 		}
 		System.out.println("\n");

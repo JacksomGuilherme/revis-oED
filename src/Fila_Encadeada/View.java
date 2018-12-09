@@ -26,7 +26,7 @@ public class View {
 				fila.retirar();
 				break;
 			case 3:
-				fila.show(x);
+				fila.show();
 				break;
 			case 4:
 				if (fila.isEmpty()) {

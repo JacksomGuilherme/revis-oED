@@ -9,19 +9,19 @@ public class arvore {
 	}
 
 	public void inserir(Node p, int valor) {
-		if (p == null) {
+		if (p == null) { // a raiz é sempre o primeiro valor inserido
 			raiz = new Node(valor, null, null);
-		} else if (valor <= p.element) {
+		} else if (valor <= p.element) { // o valor que for menor que a raiz vai para o nó da esquerda
 			if (p.esquerda != null) {
-				inserir(p.esquerda, valor);
+				inserir(p.esquerda, valor); // insere o valor no nó
 			} else {
-				p.esquerda = new Node(valor, null, null);
+				p.esquerda = new Node(valor, null, null); // cria um novo nó a esquerda
 			}
-		} else if (valor > p.element) {
+		} else if (valor > p.element) { // o valor que for maior que a raiz vai para a direita
 			if (p.direita != null) {
-				inserir(p.direita, valor);
+				inserir(p.direita, valor); // insere o valor no nó
 			} else {
-				p.direita = new Node(valor, null, null);
+				p.direita = new Node(valor, null, null); // cira um novo nó na direita
 			}
 		}
 
@@ -30,7 +30,7 @@ public class arvore {
 	public String print(Node p) {
 		String ret;
 		ret = "(";
-		if (p != null) {
+		if (p != null) { // verifica se a raiz não está vazia
 			ret += " " + p.element + " ";
 			ret += print(p.esquerda);
 			ret += print(p.direita);
@@ -42,13 +42,13 @@ public class arvore {
 	public void preOrdem(Node p) {
 
 		if (p != null) {
-			System.out.println(p.element + " ");
+			System.out.println(p.element + " "); // imprime primeiro a raiz dps vai para a esquerda e depois direita
 			preOrdem(p.esquerda);
 			preOrdem(p.direita);
 		}
 	}
 
-	public void emOrdem(Node p) {
+	public void emOrdem(Node p) { // imprime primeiro a esquerda depois a raiz e depois a direita
 		if (p != null) {
 			emOrdem(p.esquerda);
 			System.out.println(p.element + " ");
@@ -56,7 +56,7 @@ public class arvore {
 		}
 	}
 
-	public void posOrdem(Node p) {
+	public void posOrdem(Node p) { // imprime primeiro a esquerda depois a direita e depois a raiz
 		if (p != null) {
 			posOrdem(p.esquerda);
 			posOrdem(p.direita);
