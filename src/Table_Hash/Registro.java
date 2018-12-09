@@ -4,11 +4,7 @@ public class Registro {
 	public int key;
 	private int value;
 	private Registro prox;
-	
-	public Registro(){
-		prox = null;
-	}
-	
+			
 	public Registro(int key) {
 		this.key = key;
 		this.value = key;

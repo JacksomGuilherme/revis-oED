@@ -14,10 +14,8 @@ public class MapaHash {
 		if (valores[posicao] == null) {
 			valores[posicao] = registro;
 		} else {
-			Registro reg = valores[posicao];
 			while(valores[posicao] != null){
-				reg.key = (reg.key+(i^2))%11;
-				posicao = reg.key;
+				posicao = (posicao+(i^2))%11;
 				i++;
 			}
 			valores[posicao] = registro;
@@ -26,7 +24,7 @@ public class MapaHash {
 	
 
 	public Registro get(int key) {
-		Registro r = new Registro();
+		Registro r = new Registro(key);
 		r.setKey(key);
 		int posicao = r.hashCode();
 		Registro res = valores[posicao];
