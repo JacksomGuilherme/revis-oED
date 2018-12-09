@@ -19,13 +19,15 @@ public class View {
 									+ "\n5-Pre ordem\n6-Em Ordem\n7-Pos Ordem\n9-sair"));
 			switch (opc) {
 			case 1:
-				arv.inserir(arv.raiz, 50);
-				arv.inserir(arv.raiz, 40);
-				arv.inserir(arv.raiz, 60);
-				arv.inserir(arv.raiz, 35);
-				arv.inserir(arv.raiz, 45);
-				arv.inserir(arv.raiz, 55);
-				arv.inserir(arv.raiz, 65);
+				arv.inserir(arv.raiz, 8);
+				arv.inserir(arv.raiz, 3);
+				arv.inserir(arv.raiz, 10);
+				arv.inserir(arv.raiz, 1);
+				arv.inserir(arv.raiz, 6);
+				arv.inserir(arv.raiz, 14);
+				arv.inserir(arv.raiz, 4);
+				arv.inserir(arv.raiz, 7);
+				arv.inserir(arv.raiz, 13);
 				break;
 			case 2:
 				if (arv.raiz != null) {

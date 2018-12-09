@@ -2,32 +2,28 @@ package Table_Hash;
 
 public class MapaHash {
 
-	private Registro valores[];
+	public Registro valores[];
 
 	public MapaHash() {
-		valores = new Registro[100];
+		valores = new Registro[11];
 	}
 
 	public void put(Registro registro) {
 		int posicao = registro.hashCode();
+		int i = 2;
 		if (valores[posicao] == null) {
 			valores[posicao] = registro;
 		} else {
 			Registro reg = valores[posicao];
-			if (reg.getKey() == registro.getKey()) {
-				reg.setValue(registro.getValue());
-			} else {
-				while (reg.getProx() != null) {
-					if (reg.getKey() == registro.getKey()) {
-						reg.setValue(registro.getValue());
-					} else {
-						reg = reg.getProx();
-					}
-				}
-				reg.setProx(registro);
+			while(valores[posicao] != null){
+				reg.key = (reg.key+(i^2))%11;
+				posicao = reg.key;
+				i++;
 			}
+			valores[posicao] = registro;
 		}
 	}
+	
 
 	public Registro get(int key) {
 		Registro r = new Registro();

@@ -1,17 +1,17 @@
 package Table_Hash;
 
 public class Registro {
-	private int key;
-	private String value;
+	public int key;
+	private int value;
 	private Registro prox;
 	
 	public Registro(){
 		prox = null;
 	}
 	
-	public Registro(int key, String value) {
+	public Registro(int key) {
 		this.key = key;
-		this.value = value;
+		this.value = key;
 		this.prox = null;
 	}
 	
@@ -31,16 +31,16 @@ public class Registro {
 		this.key = key;
 	}
 	
-	public String getValue() {
+	public int getValue() {
 		return value;
 	}
 	
-	public void setValue(String value) {
-		this.value = value;
+	public void setValue(int key) {
+		this.value = key;
 	}
 	
 	public int hashCode(){
-			return key % 100;
+			return key % 11;
 	} 
 	
 }
